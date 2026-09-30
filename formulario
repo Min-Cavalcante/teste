@@ -448,3 +448,833 @@ Tem em Estoque
 [Sim/Não] [Gera campos para cada inversor informado]
 
 [Se não tiver em estoque, gerar campos Marca, Potência e Valor do inversor a ser substituído]
+
+PROMPT
+
+Crie um `index.html` completo e funcional para o formulário abaixo.
+
+## OBJETIVO
+
+Criar uma página chamada:
+
+**Proposta de Garantia do Fabricante**
+
+O formulário deve permitir registrar uma solicitação de garantia relacionada a inversores fotovoltaicos.
+
+A interface deve seguir **integralmente o GAUSS Design System** disponível na Knowledge Base.
+
+O System Prompt já contém as regras gerais do Design System. Portanto, não crie uma aparência genérica de formulário: consulte a Knowledge Base e implemente os componentes e padrões oficiais existentes.
+
+---
+
+# ESTRUTURA DO FORMULÁRIO
+
+## 1. Título
+
+Título principal:
+
+**Proposta de Garantia do Fabricante**
+
+---
+
+## 2. Cenário de garantia
+
+Campo obrigatório:
+
+**Escolha o cenário**
+
+Tipo: `select`
+
+Opções exatamente nesta ordem:
+
+1. `Garantia Gauss E Garantia Fabricante`
+2. `Garantia Gauss SEM Garantia Fabricante`
+3. `SEM Garantia Gauss e SEM Garantia Fabricante`
+
+---
+
+# 3. Dados do cliente
+
+## Nome do Cliente
+
+Tipo:
+
+`text`
+
+Campo obrigatório.
+
+Label:
+
+**Nome do Cliente**
+
+---
+
+# 4. Cidade
+
+Campo:
+
+**Cidade**
+
+Tipo:
+
+`select`
+
+O select deve conter exatamente todas as opções abaixo, nesta ordem:
+
+Abaíra
+Abaré
+Acajutiba
+Adustina
+Água Fria
+Aiquara
+Alagoinhas
+Alcobaça
+Almadina
+Amargosa
+Amélia Rodrigues
+América Dourada
+Anagé
+Andaraí
+Andorinha
+Angical
+Anguera
+Antas
+Antônio Cardoso
+Antônio Gonçalves
+Aporá
+Apuarema
+Araçás
+Aracatu
+Araci
+Aramari
+Arataca
+Aratuípe
+Aurelino Leal
+Baianópolis
+Baixa Grande
+Banzaê
+Barra
+Barra da Estiva
+Barra do Choça
+Barra do Mendes
+Barra do Rocha
+Barreiras
+Barro Alto
+Barro Preto
+Barrocas
+Belmonte
+Belo Campo
+Biritinga
+Boa Nova
+Boa Vista do Tupim
+Bom Jesus da Lapa
+Bom Jesus da Serra
+Boninal
+Bonito
+Boquira
+Botuporã
+Brejões
+Brejolândia
+Brotas de Macaúbas
+Brumado
+Buerarema
+Buritirama
+Caatiba
+Cabaceiras do Paraguaçu
+Cachoeira
+Caculé
+Caém
+Caetanos
+Caetité
+Cafarnaum
+Cairu
+Caldeirão Grande
+Camacan
+Camaçari
+Camamu
+Campo Alegre de Lourdes
+Campo Formoso
+Canápolis
+Canarana
+Canavieiras
+Candeal
+Candeias
+Candiba
+Cândido Sales
+Cansanção
+Canudos
+Capela do Alto Alegre
+Capim Grosso
+Caraíbas
+Caravelas
+Cardeal da Silva
+Carinhanha
+Casa Nova
+Castro Alves
+Catolândia
+Catu
+Caturama
+Central
+Chorrochó
+Cícero Dantas
+Cipó
+Coaraci
+Cocos
+Conceição da Feira
+Conceição do Almeida
+Conceição do Coité
+Conceição do Jacuípe
+Conde
+Condeúba
+Contendas do Sincorá
+Coração de Maria
+Cordeiros
+Coribe
+Coronel João Sá
+Correntina
+Cotegipe
+Cravolândia
+Crisópolis
+Cristópolis
+Cruz das Almas
+Curaçá
+Dário Meira
+Dias d'Ávila
+Dom Basílio
+Dom Macedo Costa
+Elísio Medrado
+Encruzilhada
+Entre Rios
+Érico Cardoso
+Esplanada
+Euclides da Cunha
+Eunápolis
+Fátima
+Feira da Mata
+Feira de Santana
+Filadélfia
+Firmino Alves
+Floresta Azul
+Formosa do Rio Preto
+Gandu
+Gavião
+Gentio do Ouro
+Glória
+Gongogi
+Governador Mangabeira
+Guajeru
+Guanambi
+Guaratinga
+Heliópolis
+Iaçu
+Ibiassucê
+Ibicaraí
+Ibicoara
+Ibicuí
+Ibipeba
+Ibipitanga
+Ibiquera
+Ibirapitanga
+Ibirapuã
+Ibirataia
+Ibitiara
+Ibititá
+Ibotirama
+Ichu
+Igaporã
+Igrapiúna
+Iguaí
+Ilhéus
+Inhambupe
+Ipecaetá
+Ipiaú
+Ipirá
+Ipupiara
+Irajuba
+Iramaia
+Iraquara
+Irará
+Irecê
+Itabela
+Itaberaba
+Itabuna
+Itacaré
+Itaeté
+Itagi
+Itagibá
+Itagimirim
+Itaguaçu da Bahia
+Itaju do Colônia
+Itajuípe
+Itamaraju
+Itamari
+Itambé
+Itanagra
+Itanhém
+Itaparica
+Itapé
+Itapebi
+Itapetinga
+Itapicuru
+Itapitanga
+Itaquara
+Itarantim
+Itatim
+Itiruçu
+Itiúba
+Itororó
+Ituaçu
+Ituberá
+Iuiú
+Jaborandi
+Jacaraci
+Jacobina
+Jaguaquara
+Jaguarari
+Jaguaripe
+Jandaíra
+Jequié
+Jeremoabo
+Jiquiriçá
+Jitaúna
+João Dourado
+Juazeiro
+Jucuruçu
+Jussara
+Jussari
+Jussiape
+Lafaiete Coutinho
+Lagoa Real
+Laje
+Lajedão
+Lajedinho
+Lajedo do Tabocal
+Lamarão
+Lapão
+Lauro de Freitas
+Lençóis
+Licínio de Almeida
+Livramento de Nossa Senhora
+Luís Eduardo Magalhães
+Macajuba
+Macarani
+Macaúbas
+Macururé
+Madre de Deus
+Maetinga
+Maiquinique
+Mairi
+Malhada
+Malhada de Pedras
+Manoel Vitorino
+Mansidão
+Maracás
+Maragogipe
+Maraú
+Marcionílio Souza
+Mascote
+Mata de São João
+Matina
+Medeiros Neto
+Miguel Calmon
+Milagres
+Mirangaba
+Mirante
+Monte Santo
+Morpará
+Morro do Chapéu
+Mortugaba
+Mucugê
+Mucuri
+Mulungu do Morro
+Mundo Novo
+Muniz Ferreira
+Muquém do São Francisco
+Muritiba
+Mutuípe
+Nazaré
+Nilo Peçanha
+Nordestina
+Nova Canaã
+Nova Fátima
+Nova Ibiá
+Nova Itarana
+Nova Redenção
+Nova Soure
+Nova Viçosa
+Novo Horizonte
+Novo Triunfo
+Olindina
+Oliveira dos Brejinhos
+Ouriçangas
+Ourolândia
+Palmas de Monte Alto
+Palmeiras
+Paramirim
+Paratinga
+Paripiranga
+Pau Brasil
+Paulo Afonso
+Pé de Serra
+Pedrão
+Pedro Alexandre
+Piatã
+Pilão Arcado
+Pindaí
+Pindobaçu
+Pintadas
+Piraí do Norte
+Piripá
+Piritiba
+Planaltino
+Planalto
+Poções
+Pojuca
+Ponto Novo
+Porto Seguro
+Potiraguá
+Prado
+Presidente Dutra
+Presidente Jânio Quadros
+Presidente Tancredo Neves
+Queimadas
+Quijingue
+Quixabeira
+Rafael Jambeiro
+Remanso
+Retirolândia
+Riachão das Neves
+Riachão do Jacuípe
+Riacho de Santana
+Ribeira do Amparo
+Ribeira do Pombal
+Ribeirão do Largo
+Rio de Contas
+Rio do Antônio
+Rio do Pires
+Rio Real
+Rodelas
+Ruy Barbosa
+Salinas da Margarida
+Salvador
+Santa Bárbara
+Santa Brígida
+Santa Cruz Cabrália
+Santa Cruz da Vitória
+Santa Inês
+Santa Luzia
+Santa Maria da Vitória
+Santa Rita de Cássia
+Santa Terezinha
+Santaluz
+Santana
+Santanópolis
+Santo Amaro
+Santo Antônio de Jesus
+Santo Estêvão
+São Desidério
+São Domingos
+São Felipe
+São Félix
+São Félix do Coribe
+São Francisco do Conde
+São Gabriel
+São Gonçalo dos Campos
+São José da Vitória
+São José do Jacuípe
+São Miguel das Matas
+São Sebastião do Passé
+Sapeaçu
+Sátiro Dias
+Saubara
+Saúde
+Seabra
+Sebastião Laranjeiras
+Senhor do Bonfim
+Sento Sé
+Serra do Ramalho
+Serra Dourada
+Serra Preta
+Serrinha
+Serrolândia
+Simões Filho
+Sítio do Mato
+Sítio do Quinto
+Sobradinho
+Souto Soares
+Tabocas do Brejo Velho
+Tanhaçu
+Tanque Novo
+Tanquinho
+Taperoá
+Tapiramutá
+Teixeira de Freitas
+Teodoro Sampaio
+Teofilândia
+Teolândia
+Terra Nova
+Tremedal
+Tucano
+Uauá
+Ubaíra
+Ubaitaba
+Ubatã
+Uibaí
+Umburanas
+Una
+Urandi
+Uruçuca
+Utinga
+Valença
+Valente
+Várzea da Roça
+Várzea do Poço
+Várzea Nova
+Varzedo
+Vera Cruz
+Vereda
+Vitória da Conquista
+Wagner
+Wanderley
+Wenceslau Guimarães
+Xique-Xique
+Petrolina
+Araripina
+Ipojuca
+Outra
+
+### Comportamento de "Outra"
+
+Quando o usuário selecionar:
+
+`Outra`
+
+deve aparecer um campo de texto para informar manualmente a cidade.
+
+Esse campo deve permanecer oculto enquanto "Outra" não estiver selecionado.
+
+---
+
+# 5. INVERSORES COM PROBLEMA
+
+Campo:
+
+**Inversor(es) com Problema**
+
+Tipo:
+
+`number`
+
+Valor inicial:
+
+`1`
+
+O valor mínimo deve ser `1`.
+
+A quantidade informada neste campo controla dinamicamente a quantidade de campos dos inversores.
+
+---
+
+# 6. DADOS DOS INVERSORES
+
+Para cada inversor informado em **Inversor(es) com Problema**, gerar dinamicamente um conjunto de campos.
+
+Por exemplo:
+
+Se:
+
+`Inversor(es) com Problema = 1`
+
+mostrar:
+
+### Inversor 1
+
+- Potência do Inversor (AC)
+- Potência do Sistema (kWp)
+- Marca do Inversor
+- Tem em Estoque
+
+Se:
+
+`Inversor(es) com Problema = 3`
+
+mostrar:
+
+### Inversor 1
+
+- Potência do Inversor (AC)
+- Potência do Sistema (kWp)
+- Marca do Inversor
+- Tem em Estoque
+
+### Inversor 2
+
+- Potência do Inversor (AC)
+- Potência do Sistema (kWp)
+- Marca do Inversor
+- Tem em Estoque
+
+### Inversor 3
+
+- Potência do Inversor (AC)
+- Potência do Sistema (kWp)
+- Marca do Inversor
+- Tem em Estoque
+
+A geração deve ser dinâmica via JavaScript.
+
+---
+
+# 7. POTÊNCIA DO INVERSOR
+
+Para cada inversor:
+
+Label:
+
+**Potência do Inversor (AC)**
+
+Tipo:
+
+`number`
+
+Cada inversor deve possuir seu próprio campo.
+
+---
+
+# 8. POTÊNCIA DO SISTEMA
+
+Para cada inversor:
+
+Label:
+
+**Potência do Sistema (kWp)**
+
+Tipo:
+
+`number`
+
+Cada inversor deve possuir seu próprio campo.
+
+---
+
+# 9. MARCA DO INVERSOR
+
+Para cada inversor:
+
+Label:
+
+**Marca do Inversor**
+
+Tipo:
+
+`text`
+
+Cada inversor deve possuir seu próprio campo.
+
+---
+
+# 10. ESTOQUE
+
+Para cada inversor:
+
+Label:
+
+**Tem em Estoque**
+
+Tipo:
+
+`select`
+
+Opções:
+
+- Sim
+- Não
+
+Cada inversor deve possuir seu próprio campo.
+
+---
+
+# 11. COMPORTAMENTO DE ESTOQUE
+
+Quando:
+
+**Tem em Estoque = Sim**
+
+não mostrar os campos de substituição.
+
+Quando:
+
+**Tem em Estoque = Não**
+
+mostrar dinamicamente:
+
+### Dados do inversor a ser substituído
+
+- Marca
+- Potência
+- Valor
+
+Campos:
+
+**Marca**
+
+Tipo: `text`
+
+**Potência**
+
+Tipo: `number`
+
+**Valor**
+
+Tipo: `number`
+
+O campo de valor deve permitir informar um valor monetário adequadamente.
+
+Os campos de substituição devem aparecer apenas para o inversor correspondente.
+
+Exemplo:
+
+Se o usuário informar 3 inversores e somente o Inversor 2 estiver "Não" em estoque, os campos de substituição devem aparecer somente no Inversor 2.
+
+---
+
+# 12. COMPORTAMENTO DINÂMICO
+
+A lógica deve funcionar sem recarregar a página.
+
+Alterar:
+
+**Inversor(es) com Problema**
+
+deve atualizar imediatamente os blocos de inversores.
+
+Alterar:
+
+**Tem em Estoque**
+
+deve mostrar/ocultar os campos de substituição correspondentes imediatamente.
+
+Alterar:
+
+**Cidade**
+
+para `Outra` deve mostrar/ocultar o campo de cidade personalizada imediatamente.
+
+Não utilizar frameworks externos se eles não forem necessários.
+
+Pode utilizar HTML, CSS e JavaScript puro.
+
+---
+
+# 13. ESTRUTURA VISUAL
+
+Organize o formulário de maneira clara e profissional.
+
+Utilize os componentes existentes do GAUSS Design System sempre que aplicáveis.
+
+A página deve ter:
+
+- título;
+- campos agrupados de forma lógica;
+- boa hierarquia visual;
+- espaçamento consistente;
+- blocos claros para cada inversor;
+- diferenciação visual adequada entre os dados gerais e os dados de cada inversor;
+- responsividade.
+
+Não transforme isso em um formulário visualmente genérico.
+
+Consulte especificamente:
+
+`preview/components.html`
+
+antes de implementar os:
+
+- inputs;
+- selects;
+- labels;
+- botões;
+- cards;
+- badges;
+- containers;
+- estados de foco;
+- demais elementos.
+
+---
+
+# 14. IDENTIDADE VISUAL
+
+Use a identidade oficial da GAUSS.
+
+Não utilize:
+
+- emojis;
+- ícones decorativos aleatórios;
+- gradientes genéricos;
+- cores inventadas;
+- estética de dashboard genérico;
+- estilos de formulário de bibliotecas externas.
+
+Use os tokens e componentes oficiais encontrados na Knowledge Base.
+
+---
+
+# 15. VALIDAÇÃO
+
+Implemente validação HTML adequada.
+
+Campos obrigatórios devem utilizar `required` quando apropriado.
+
+O número de inversores deve aceitar somente valores válidos a partir de 1.
+
+Campos dinâmicos devem ser corretamente criados/removidos e seus valores devem ser corretamente associados ao respectivo inversor.
+
+---
+
+# 16. ACESSIBILIDADE
+
+Utilize:
+
+- `<label>` associado corretamente aos campos;
+- `id` e `name` coerentes;
+- tipos de input adequados;
+- atributos apropriados;
+- foco visível;
+- estrutura semântica.
+
+Não utilize apenas texto visual como substituto de labels.
+
+---
+
+# 17. ENTREGA
+
+Entregue **somente o `index.html` completo e funcional**, contendo HTML, CSS e JavaScript necessários.
+
+Não use:
+
+- `...`;
+- placeholders;
+- "restante do código";
+- comentários dizendo para implementar depois;
+- campos fictícios;
+- opções resumidas;
+- listas de cidades omitidas.
+
+A lista de cidades fornecida neste prompt deve estar completa no código.
+
+Antes de responder, faça uma auditoria silenciosa para confirmar:
+
+1. Todas as cidades estão presentes.
+2. `Outra` funciona.
+3. O número de inversores começa em 1.
+4. A quantidade de blocos acompanha o número informado.
+5. Cada inversor possui seus próprios campos.
+6. "Tem em Estoque" funciona individualmente.
+7. "Não" mostra Marca, Potência e Valor do substituto apenas para aquele inversor.
+8. A interface utiliza efetivamente os componentes/tokens do GAUSS Design System.
+9. Não há emojis.
+10. Não há cores arbitrárias quando existem tokens oficiais.
+11. Não foram inventados componentes que já existem na Knowledge Base.
+12. O HTML é completo e funcional.
+
+**Não substitua os requisitos acima por uma interpretação simplificada.**
