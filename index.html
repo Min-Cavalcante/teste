@@ -2,242 +2,619 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proposta de Garantia do Fabricante</title>
-  <link rel="stylesheet" href="colors_and_type.css">
-  <style>
-    .form-container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: var(--space-4);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      background-color: var(--bg-2);
-    }
-    .form-group {
-      margin-bottom: var(--space-4);
-    }
-    label {
-      display: block;
-      margin-bottom: var(--space-2);
-      color: var(--fg-1);
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: var(--space-2);
-      border: 1px solid var(--border-1);
-      border-radius: var(--radius-md);
-      font-family: var(--font-body);
-      font-size: var(--font-size-body);
-      color: var(--fg-1);
-      background-color: var(--bg-1);
-    }
-    input[type="number"] {
-      -moz-appearance: textfield;
-      appearance: textfield;
-    }
-    input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    .btn {
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      font-family: var(--font-body);
-      font-size: var(--font-size-body);
-      font-weight: var(--font-weight-medium);
-      color: var(--fg-1);
-      background-color: var(--gauss-green);
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .btn:hover {
-      background-color: var(--gauss-green-dark);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Gauss Energia</title>
+    <link rel="stylesheet" href="colors_and_type.css">
+    <style>
+        body {
+            font-family: var(--font-base);
+            background-color: var(--ink-50);
+            padding: var(--space-4);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--ink-100);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-4);
+        }
+        .field {
+            margin-bottom: var(--space-3);
+        }
+        .field label {
+            display: block;
+            margin-bottom: var(--space-1);
+            font-size: var(--fs-4);
+            font-weight: 600;
+        }
+        .input, select {
+            width: 100%;
+            padding: var(--space-2);
+            font-size: var(--fs-4);
+            border: 1px solid var(--ink-200);
+            border-radius: var(--radius-md);
+            transition: border-color 0.2s;
+        }
+        .input:focus, select:focus {
+            border-color: var(--gauss-green);
+            outline: none;
+        }
+        .btn {
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--fs-4);
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn-primary {
+            background-color: var(--gauss-green);
+            color: var(--ink-1000);
+        }
+        .btn-primary:hover {
+            background-color: var(--signal-grid);
+        }
+        .card {
+            background: var(--ink-100);
+            border: 1px solid var(--ink-200);
+            border-radius: var(--radius-md);
+            padding: var(--space-3);
+            margin-bottom: var(--space-3);
+        }
+        .card-header {
+            font-size: var(--fs-5);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+        .card-body {
+            font-size: var(--fs-4);
+        }
+        .card-footer {
+            font-size: var(--fs-4);
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
-
-<div class="form-container">
-  <h2 class="eyebrow">Proposta de Garantia do Fabricante</h2>
-  <form id="warranty-form">
-    <div class="form-group">
-      <label for="scenario">Escolha o cenário:</label>
-      <select id="scenario" name="scenario" class="select">
-        <option value="garantia-gauss-e-fabricante">Garantia Gauss E Garantia Fabricante</option>
-        <option value="garantia-gauss-sem-fabricante">Garantia Gauss SEM Garantia Fabricante</option>
-        <option value="sem-garantia-gauss-e-fabricante">SEM Garantia Gauss e SEM Garantia Fabricante</option>
-      </select>
+    <div class="container">
+        <h1 class="eyebrow">PROPOSTA COMERCIAL · 1002</h1>
+        <form id="proposalForm">
+            <div class="field">
+                <label for="clientName">Nome do Cliente</label>
+                <input type="text" id="clientName" class="input" required>
+            </div>
+            <div class="field">
+                <label for="clientAddress">Endereço</label>
+                <input type="text" id="clientAddress" class="input" required>
+            </div>
+            <div class="field">
+                <label for="clientCity">Cidade</label>
+                <select id="clientCity" class="input" required>
+                    <option value="">Selecione uma cidade</option>
+                    <option value="Abaíra">Abaíra</option>
+                    <option value="Abaré">Abaré</option>
+                    <option value="Acajutiba">Acajutiba</option>
+                    <option value="Adustina">Adustina</option>
+                    <option value="Afligidos">Afligidos</option>
+                    <option value="Aiquara">Aiquara</option>
+                    <option value="Alagoinhas">Alagoinhas</option>
+                    <option value="Alcobaça">Alcobaça</option>
+                    <option value="Almadina">Almadina</option>
+                    <option value="Amargosa">Amargosa</option>
+                    <option value="Amélia Rodrigues">Amélia Rodrigues</option>
+                    <option value="América Dourada">América Dourada</option>
+                    <option value="Anagé">Anagé</option>
+                    <option value="Andaraí">Andaraí</option>
+                    <option value="Andorinha">Andorinha</option>
+                    <option value="Angical">Angical</option>
+                    <option value="Anguera">Anguera</option>
+                    <option value="Antas">Antas</option>
+                    <option value="Antônio Cardoso">Antônio Cardoso</option>
+                    <option value="Antônio Gonçalves">Antônio Gonçalves</option>
+                    <option value="Apora">Apora</option>
+                    <option value="Apuarema">Apuarema</option>
+                    <option value="Aracaju">Aracaju</option>
+                    <option value="Aracatu">Aracatu</option>
+                    <option value="Araci">Araci</option>
+                    <option value="Aramari">Aramari</option>
+                    <option value="Arataca">Arataca</option>
+                    <option value="Aratuípe">Aratuípe</option>
+                    <option value="Aurelino Leal">Aurelino Leal</option>
+                    <option value="Avelino Lopes">Avelino Lopes</option>
+                    <option value="Azeites">Azeites</option>
+                    <option value="Baianópolis">Baianópolis</option>
+                    <option value="Baixa Grande">Baixa Grande</option>
+                    <option value="Banzaê">Banzaê</option>
+                    <option value="Barra">Barra</option>
+                    <option value="Barra da Estiva">Barra da Estiva</option>
+                    <option value="Barra do Choça">Barra do Choça</option>
+                    <option value="Barra do Mendes">Barra do Mendes</option>
+                    <option value="Barra do Rocha">Barra do Rocha</option>
+                    <option value="Barreiras">Barreiras</option>
+                    <option value="Barro Alto">Barro Alto</option>
+                    <option value="Barro Preto">Barro Preto</option>
+                    <option value="Barrocas">Barrocas</option>
+                    <option value="Belmonte">Belmonte</option>
+                    <option value="Belo Campo">Belo Campo</option>
+                    <option value="Biritinga">Biritinga</option>
+                    <option value="Boa Nova">Boa Nova</option>
+                    <option value="Boa Vista do Tupim">Boa Vista do Tupim</option>
+                    <option value="Bom Jesus da Vitória">Bom Jesus da Vitória</option>
+                    <option value="Boninal">Boninal</option>
+                    <option value="Bonito">Bonito</option>
+                    <option value="Boquira">Boquira</option>
+                    <option value="Botuporã">Botuporã</option>
+                    <option value="Brejões">Brejões</option>
+                    <option value="Brejolândia">Brejolândia</option>
+                    <option value="Brotas de Macaúbas">Brotas de Macaúbas</option>
+                    <option value="Brumado">Brumado</option>
+                    <option value="Buerarema">Buerarema</option>
+                    <option value="Buritirama">Buritirama</option>
+                    <option value="Caatiba">Caatiba</option>
+                    <option value="Cabaceiras do Paraguaçu">Cabaceiras do Paraguaçu</option>
+                    <option value="Cachoeira">Cachoeira</option>
+                    <option value="Caculé">Caculé</option>
+                    <option value="Caetanos">Caetanos</option>
+                    <option value="Caetité">Caetité</option>
+                    <option value="Cafarnaum">Cafarnaum</option>
+                    <option value="Cairu">Cairu</option>
+                    <option value="Caldeirão Grande">Caldeirão Grande</option>
+                    <option value="Caldeiras">Caldeiras</option>
+                    <option value="Camacan">Camacan</option>
+                    <option value="Camaçari">Camaçari</option>
+                    <option value="Camamu">Camamu</option>
+                    <option value="Campanha">Campanha</option>
+                    <option value="Campo Alegre de Lourdes">Campo Alegre de Lourdes</option>
+                    <option value="Campo Formoso">Campo Formoso</option>
+                    <option value="Canápolis">Canápolis</option>
+                    <option value="Canarana">Canarana</option>
+                    <option value="Canavieiras">Canavieiras</option>
+                    <option value="Candeal">Candeal</option>
+                    <option value="Candeias">Candeias</option>
+                    <option value="Candiba">Candiba</option>
+                    <option value="Cândido Sales">Cândido Sales</option>
+                    <option value="Cansanção">Cansanção</option>
+                    <option value="Canudos">Canudos</option>
+                    <option value="Capim Grosso">Capim Grosso</option>
+                    <option value="Carácas">Carácas</option>
+                    <option value="Caravelas">Caravelas</option>
+                    <option value="Cardeal da Silva">Cardeal da Silva</option>
+                    <option value="Carinhanha">Carinhanha</option>
+                    <option value="Casa Nova">Casa Nova</option>
+                    <option value="Castro Alves">Castro Alves</option>
+                    <option value="Catolândia">Catolândia</option>
+                    <option value="Catu">Catu</option>
+                    <option value="Caturama">Caturama</option>
+                    <option value="Caxangá">Caxangá</option>
+                    <option value="Caximbó">Caximbó</option>
+                    <option value="Ceará-Mirim">Ceará-Mirim</option>
+                    <option value="Central">Central</option>
+                    <option value="Chapada">Chapada</option>
+                    <option value="Chorrochó">Chorrochó</option>
+                    <option value="Cícero Dantas">Cícero Dantas</option>
+                    <option value="Cipó">Cipó</option>
+                    <option value="Coaraci">Coaraci</option>
+                    <option value="Cocos">Cocos</option>
+                    <option value="Conceição da Feira">Conceição da Feira</option>
+                    <option value="Conceição do Almeida">Conceição do Almeida</option>
+                    <option value="Conceição do Coité">Conceição do Coité</option>
+                    <option value="Conceição do Jacuípe">Conceição do Jacuípe</option>
+                    <option value="Conde">Conde</option>
+                    <option value="Condeúba">Condeúba</option>
+                    <option value="Contendas do Sincorá">Contendas do Sincorá</option>
+                    <option value="Coração de Maria">Coração de Maria</option>
+                    <option value="Cordeiros">Cordeiros</option>
+                    <option value="Coribe">Coribe</option>
+                    <option value="Cordeirópolis">Cordeirópolis</option>
+                    <option value="Correntina">Correntina</option>
+                    <option value="Cotegipe">Cotegipe</option>
+                    <option value="Cravolândia">Cravolândia</option>
+                    <option value="Crisópolis">Crisópolis</option>
+                    <option value="Cristópolis">Cristópolis</option>
+                    <option value="Cruz das Almas">Cruz das Almas</option>
+                    <option value="Curaçá">Curaçá</option>
+                    <option value="Dário Meira">Dário Meira</option>
+                    <option value="Dias D'Ávila">Dias D'Ávila</option>
+                    <option value="Dom Basílio">Dom Basílio</option>
+                    <option value="Dom Macedo Costa">Dom Macedo Costa</option>
+                    <option value="Elisio Medrado">Elisio Medrado</option>
+                    <option value="Encruzilhada">Encruzilhada</option>
+                    <option value="Entre Rios">Entre Rios</option>
+                    <option value="Érico Cardoso">Érico Cardoso</option>
+                    <option value="Esplanada">Esplanada</option>
+                    <option value="Euclides da Cunha">Euclides da Cunha</option>
+                    <option value="Eunápolis">Eunápolis</option>
+                    <option value="Feira da Mata">Feira da Mata</option>
+                    <option value="Feira de Santana">Feira de Santana</option>
+                    <option value="Filadélfia">Filadélfia</option>
+                    <option value="Firmino Alves">Firmino Alves</option>
+                    <option value="Floresta Azul">Floresta Azul</option>
+                    <option value="Formosa do Rio Preto">Formosa do Rio Preto</option>
+                    <option value="Gandu">Gandu</option>
+                    <option value="Gavião">Gavião</option>
+                    <option value="Gentio do Ouro">Gentio do Ouro</option>
+                    <option value="Glória">Glória</option>
+                    <option value="Gongogi">Gongogi</option>
+                    <option value="Governador Mangabeira">Governador Mangabeira</option>
+                    <option value="Guajeru">Guajeru</option>
+                    <option value="Guanambi">Guanambi</option>
+                    <option value="Guaratinga">Guaratinga</option>
+                    <option value="Heliópolis">Heliópolis</option>
+                    <option value="Iaçu">Iaçu</option>
+                    <option value="Ibiassucê">Ibiassucê</option>
+                    <option value="Ibicaraí">Ibicaraí</option>
+                    <option value="Ibicoara">Ibicoara</option>
+                    <option value="Ibicuí">Ibicuí</option>
+                    <option value="Ibipeba">Ibipeba</option>
+                    <option value="Ibipitanga">Ibipitanga</option>
+                    <option value="Ibiquera">Ibiquera</option>
+                    <option value="Ibirapitanga">Ibirapitanga</option>
+                    <option value="Ibirataia">Ibirataia</option>
+                    <option value="Ibotirama">Ibotirama</option>
+                    <option value="Ichu">Ichu</option>
+                    <option value="Igaporã">Igaporã</option>
+                    <option value="Igrapiúna">Igrapiúna</option>
+                    <option value="Iguaí">Iguaí</option>
+                    <option value="Ilhéus">Ilhéus</option>
+                    <option value="Inhambupe">Inhambupe</option>
+                    <option value="Ipecaetá">Ipecaetá</option>
+                    <option value="Ipiaú">Ipiaú</option>
+                    <option value="Ipirá">Ipirá</option>
+                    <option value="Ipuã">Ipuã</option>
+                    <option value="Iracém Pintado">Iracém Pintado</option>
+                    <option value="Iraquara">Iraquara</option>
+                    <option value="Irará">Irará</option>
+                    <option value="Itabela">Itabela</option>
+                    <option value="Itaberaba">Itaberaba</option>
+                    <option value="Itabuna">Itabuna</option>
+                    <option value="Itacaré">Itacaré</option>
+                    <option value="Itaeté">Itaeté</option>
+                    <option value="Itagi">Itagi</option>
+                    <option value="Itagibá">Itagibá</option>
+                    <option value="Itagimirim">Itagimirim</option>
+                    <option value="Itaju do Colônia">Itaju do Colônia</option>
+                    <option value="Itajuípe">Itajuípe</option>
+                    <option value="Itamaraju">Itamaraju</option>
+                    <option value="Itamari">Itamari</option>
+                    <option value="Itambé">Itambé</option>
+                    <option value="Itanagra">Itanagra</option>
+                    <option value="Itanhém">Itanhém</option>
+                    <option value="Itaparica">Itaparica</option>
+                    <option value="Itapé">Itapé</option>
+                    <option value="Itapebi">Itapebi</option>
+                    <option value="Itapetinga">Itapetinga</option>
+                    <option value="Itapicuru">Itapicuru</option>
+                    <option value="Itapitanga">Itapitanga</option>
+                    <option value="Itaquara">Itaquara</option>
+                    <option value="Itarantim">Itarantim</option>
+                    <option value="Itatim">Itatim</option>
+                    <option value="Itiruçu">Itiruçu</option>
+                    <option value="Itiúba">Itiúba</option>
+                    <option value="Itororó">Itororó</option>
+                    <option value="Ituaçu">Ituaçu</option>
+                    <option value="Ituberá">Ituberá</option>
+                    <option value="Iuiú">Iuiú</option>
+                    <option value="Jaborandi">Jaborandi</option>
+                    <option value="Jacaraci">Jacaraci</option>
+                    <option value="Jacobina">Jacobina</option>
+                    <option value="Jaguaquara">Jaguaquara</option>
+                    <option value="Jaguarari">Jaguarari</option>
+                    <option value="Jaguaripe">Jaguaripe</option>
+                    <option value="Jandaíra">Jandaíra</option>
+                    <option value="Jequié">Jequié</option>
+                    <option value="Jeremoabo">Jeremoabo</option>
+                    <option value="Jiquiriçá">Jiquiriçá</option>
+                    <option value="Jitaúna">Jitaúna</option>
+                    <option value="João Dourado">João Dourado</option>
+                    <option value="Juazeiro">Juazeiro</option>
+                    <option value="Jucuruçu">Jucuruçu</option>
+                    <option value="Jussara">Jussara</option>
+                    <option value="Jussari">Jussari</option>
+                    <option value="Jussiape">Jussiape</option>
+                    <option value="Lafaiete Coutinho">Lafaiete Coutinho</option>
+                    <option value="Lagoa Real">Lagoa Real</option>
+                    <option value="Laje">Laje</option>
+                    <option value="Laje do Jacuípe">Laje do Jacuípe</option>
+                    <option value="Lamarão">Lamarão</option>
+                    <option value="Lapão">Lapão</option>
+                    <option value="Lauro de Freitas">Lauro de Freitas</option>
+                    <option value="Lençóis">Lençóis</option>
+                    <option value="Licínio de Almeida">Licínio de Almeida</option>
+                    <option value="Livramento de Nossa Senhora">Livramento de Nossa Senhora</option>
+                    <option value="Luís Eduardo Magalhães">Luís Eduardo Magalhães</option>
+                    <option value="Macajuba">Macajuba</option>
+                    <option value="Macarani">Macarani</option>
+                    <option value="Macaúbas">Macaúbas</option>
+                    <option value="Macururé">Macururé</option>
+                    <option value="Madalena">Madalena</option>
+                    <option value="Maetinga">Maetinga</option>
+                    <option value="Maiquinique">Maiquinique</option>
+                    <option value="Mairi">Mairi</option>
+                    <option value="Malhada">Malhada</option>
+                    <option value="Malhada de Pedras">Malhada de Pedras</option>
+                    <option value="Mandiroba">Mandiroba</option>
+                    <option value="Mangue Seco">Mangue Seco</option>
+                    <option value="Maniacu">Maniacu</option>
+                    <option value="Mansidão">Mansidão</option>
+                    <option value="Maracás">Maracás</option>
+                    <option value="Maragogipe">Maragogipe</option>
+                    <option value="Maraú">Maraú</option>
+                    <option value="Marcionílio Souza">Marcionílio Souza</option>
+                    <option value="Mascote">Mascote</option>
+                    <option value="Mata de São João">Mata de São João</option>
+                    <option value="Matina">Matina</option>
+                    <option value="Medeiros Neto">Medeiros Neto</option>
+                    <option value="Miguel Calmon">Miguel Calmon</option>
+                    <option value="Milagres">Milagres</option>
+                    <option value="Mirangaba">Mirangaba</option>
+                    <option value="Mirante">Mirante</option>
+                    <option value="Morpará">Morpará</option>
+                    <option value="Morro do Chapéu">Morro do Chapéu</option>
+                    <option value="Mortugaba">Mortugaba</option>
+                    <option value="Mucugê">Mucugê</option>
+                    <option value="Mucuri">Mucuri</option>
+                    <option value="Miguel Calmon">Miguel Calmon</option>
+                    <option value="Muritiba">Muritiba</option>
+                    <option value="Mutuípe">Mutuípe</option>
+                    <option value="Nazaré">Nazaré</option>
+                    <option value="Nilo Peçanha">Nilo Peçanha</option>
+                    <option value="Nordestina">Nordestina</option>
+                    <option value="Nova Canaã">Nova Canaã</option>
+                    <option value="Nova Fátima">Nova Fátima</option>
+                    <option value="Nova Ibia">Nova Ibia</option>
+                    <option value="Nova Itarana">Nova Itarana</option>
+                    <option value="Nova Redenção">Nova Redenção</option>
+                    <option value="Nova Soure">Nova Soure</option>
+                    <option value="Nova Viçosa">Nova Viçosa</option>
+                    <option value="Novo Horizonte">Novo Horizonte</option>
+                    <option value="Novo Triunfo">Novo Triunfo</option>
+                    <option value="Olindina">Olindina</option>
+                    <option value="Oliveira dos Brejinhos">Oliveira dos Brejinhos</option>
+                    <option value="Ouriçangas">Ouriçangas</option>
+                    <option value="Ouricana">Ouricana</option>
+                    <option value="Ourolândia">Ourolândia</option>
+                    <option value="Palmas de Monte Alto">Palmas de Monte Alto</option>
+                    <option value="Paramirim">Paramirim</option>
+                    <option value="Paratinga">Paratinga</option>
+                    <option value="Paripiranga">Paripiranga</option>
+                    <option value="Pau Brasil">Pau Brasil</option>
+                    <option value="Paulo Afonso">Paulo Afonso</option>
+                    <option value="Pe. de S. Antônio">Pe. de S. Antônio</option>
+                    <option value="Pedrão">Pedrão</option>
+                    <option value="Pedro Alexandre">Pedro Alexandre</option>
+                    <option value="Piatã">Piatã</option>
+                    <option value="Pilão Arcado">Pilão Arcado</option>
+                    <option value="Pindaí">Pindaí</option>
+                    <option value="Pintadas">Pintadas</option>
+                    <option value="Piraí do Norte">Piraí do Norte</option>
+                    <option value="Piripá">Piripá</option>
+                    <option value="Piritiba">Piritiba</option>
+                    <option value="Planaltino">Planaltino</option>
+                    <option value="Planalto">Planalto</option>
+                    <option value="Poções">Poções</option>
+                    <option value="Pojuca">Pojuca</option>
+                    <option value="Ponto Novo">Ponto Novo</option>
+                    <option value="Porto Seguro">Porto Seguro</option>
+                    <option value="Potiraguá">Potiraguá</option>
+                    <option value="Prado">Prado</option>
+                    <option value="Presidente Dutra">Presidente Dutra</option>
+                    <option value="Presidente Jânio Quadros">Presidente Jânio Quadros</option>
+                    <option value="Presidente Tancredo Neves">Presidente Tancredo Neves</option>
+                    <option value="Queimadas">Queimadas</option>
+                    <option value="Quilombo">Quilombo</option>
+                    <option value="Quixabeira">Quixabeira</option>
+                    <option value="Rafael Jambeiro">Rafael Jambeiro</option>
+                    <option value="Remanso">Remanso</option>
+                    <option value="Retirolândia">Retirolândia</option>
+                    <option value="Riachão das Neves">Riachão das Neves</option>
+                    <option value="Riachão do Jacuípe">Riachão do Jacuípe</option>
+                    <option value="Riacho de Santana">Riacho de Santana</option>
+                    <option value="Ribeira do Amparo">Ribeira do Amparo</option>
+                    <option value="Ribeira do Pombal">Ribeira do Pombal</option>
+                    <option value="Ribeirão do Largo">Ribeirão do Largo</option>
+                    <option value="Rio de Contas">Rio de Contas</option>
+                    <option value="Rio do Antônio">Rio do Antônio</option>
+                    <option value="Rio do Pires">Rio do Pires</option>
+                    <option value="Rio Real">Rio Real</option>
+                    <option value="Rodelas">Rodelas</option>
+                    <option value="Ruy Barbosa">Ruy Barbosa</option>
+                    <option value="Salinas da Margarida">Salinas da Margarida</option>
+                    <option value="Salvador">Salvador</option>
+                    <option value="Santa Brígida">Santa Brígida</option>
+                    <option value="Santa Cruz Cabrália">Santa Cruz Cabrália</option>
+                    <option value="Santa Cruz da Vitória">Santa Cruz da Vitória</option>
+                    <option value="Santa Inês">Santa Inês</option>
+                    <option value="Santa Luzia">Santa Luzia</option>
+                    <option value="Santa Maria da Vitória">Santa Maria da Vitória</option>
+                    <option value="Santa Rita de Cássia">Santa Rita de Cássia</option>
+                    <option value="Santa Teresinha">Santa Teresinha</option>
+                    <option value="Santaluz">Santaluz</option>
+                    <option value="Santana">Santana</option>
+                    <option value="Santanópolis">Santanópolis</option>
+                    <option value="Santo Amaro">Santo Amaro</option>
+                    <option value="Santo Antônio de Jesus">Santo Antônio de Jesus</option>
+                    <option value="Santo Estevão">Santo Estevão</option>
+                    <option value="Santo Inácio">Santo Inácio</option>
+                    <option value="São Desidério">São Desidério</option>
+                    <option value="São Domingos">São Domingos</option>
+                    <option value="São Felipe">São Felipe</option>
+                    <option value="São Félix">São Félix</option>
+                    <option value="São Francisco do Conde">São Francisco do Conde</option>
+                    <option value="São Gabriel">São Gabriel</option>
+                    <option value="São Gonçalo dos Campos">São Gonçalo dos Campos</option>
+                    <option value="São José da Vitória">São José da Vitória</option>
+                    <option value="São José do Jacuípe">São José do Jacuípe</option>
+                    <option value="São Miguel das Matas">São Miguel das Matas</option>
+                    <option value="São Sebastião do Passé">São Sebastião do Passé</option>
+                    <option value="Sapeaçu">Sapeaçu</option>
+                    <option value="Sátiro Dias">Sátiro Dias</option>
+                   1<option value="Saubara">Saubara</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Seabra">Seabra</option>
+                    <option value="Sebastião Laranjeiras">Sebastião Laranjeiras</option>
+                    <option value="Senhor do Bonfim">Senhor do Bonfim</option>
+                    <option value="Sento Sé">Sento Sé</option>
+                    <option value="Serra do Ramalho">Serra do Ramalho</option>
+                    <option value="Serra Dourada">Serra Dourada</option>
+                    <option value="Serra Preta">Serra Preta</option>
+                    <option value="Serrinha">Serrinha</option>
+                    <option value="Serrolândia">Serrolândia</option>
+                    <option value="Simões Filho">Simões Filho</option>
+                    <option value="Sítio do Mato">Sítio do Mato</option>
+                    <option value="Sítio do Quinto">Sítio do Quinto</option>
+                    <option value="Sobradinho">Sobradinho</option>
+                    <option value="Souto Soares">Souto Soares</option>
+                    <option value="Tabocas do Brejo Velho">Tabocas do Brejo Velho</option>
+                    <option value="Tanhaçu">Tanhaçu</option>
+                    <option value="Tanque Novo">Tanque Novo</option>
+                    <option value="Tanquinho">Tanquinho</option>
+                    <option value="Taperoá">Taperoá</option>
+                    <option value="Tapiraimí">Tapiraimí</option>
+                    <option value="Teixeira de Freitas">Teixeira de Freitas</option>
+                    <option value="Teodoro Sampaio">Teodoro Sampaio</option>
+                    <option value="Teofilândia">Teofilândia</option>
+                    <option value="Teolândia">Teolândia</option>
+                    <option value="Terra Nova">Terra Nova</option>
+                    <option value="Tremedal">Tremedal</option>
+                    <option value="Tucano">Tucano</option>
+                    <option value="Uaua">Uaua</option>
+                    <option value="Ubaíra">Ubaíra</option>
+                    <option value="Ubaitaba">Ubaitaba</option>
+                    <option value="Ubatã">Ubatã</option>
+                    <option value="Umuarama">Umuarama</option>
+                    <option value="Una">Una</option>
+                    <option value="Urandi">Urandi</option>
+                    <option value="Uruçuca">Uruçuca</option>
+                    <option value="Utinga">Utinga</option>
+                    <option value="Valença">Valença</option>
+                    <option value="Valente">Valente</option>
+                    <option value="Várzea da Roça">Várzea da Roça</option>
+                    <option value="Várzea do Poço">Várzea do Poço</option>
+                    <option value="Várzea Nova">Várzea Nova</option>
+                    <option value="Varzedo">Varzedo</option>
+                    <option value="Vera Cruz">Vera Cruz</option>
+                    <option value="Vereda">Vereda</option>
+                    <option value="Vitória da Conquista">Vitória da Conquista</option>
+                    <option value="Wagner">Wagner</option>
+                    <option value="Wanderley">Wanderley</option>
+                    <option value="Wenceslau Guimarães">Wenceslau Guimarães</option>
+                    <option value="Xique-Xique">Xique-Xique</option>
+                    <option value="Outra">Outra</option>
+                </select>
+            </div>
+            <div class="field" id="otherCityField" style="display: none;">
+                <label for="otherCity">Outra Cidade</label>
+                <input type="text" id="otherCity" class="input">
+            </div>
+            <div class="field">
+                <label for="clientCpf">CPF/CNPJ</label>
+                <input type="text" id="clientCpf" class="input" required>
+            </div>
+            <div class="field">
+                <label for="clientPhone">Telefone</label>
+                <input type="tel" id="clientPhone" class="input" required>
+            </div>
+            <div class="field">
+                <label for="clientEmail">E-mail</label>
+                <input type="email" id="clientEmail" class="input" required>
+            </div>
+            <div class="field">
+                <label for="installer">Instalador</label>
+                <input type="text" id="installer" class="input" required>
+            </div>
+            <div class="field">
+                <label for="installerPhone">Telefone do Instalador</label>
+                <input type="tel" id="installerPhone" class="input" required>
+            </div>
+            <div class="field">
+                <label for="installerEmail">E-mail do Instalador</label>
+                <input type="email" id="installerEmail" class="input" required>
+            </div>
+            <div class="field">
+                <label for="proposalDate">Data da Proposta</label>
+                <input type="date" id="proposalDate" class="input" required>
+            </div>
+            <div class="field">
+                <label for="proposalNumber">Número da Proposta</label>
+                <input type="text" id="proposalNumber" class="input" required>
+            </div>
+            <div class="field">
+                <label for="inverterQuantity">Quantidade de Inversores</label>
+                <input type="number" id="inverterQuantity" class="input" required>
+            </div>
+            <div class="field">
+                <label for="panelQuantity">Quantidade de Painéis</label>
+                <input type="number" id="panelQuantity" class="input" required>
+            </div>
+            <div class="field">
+                <label for="inverterModel">Modelo do Inversor</label>
+                <input type="text" id="inverterModel" class="input" required>
+            </div>
+            <div class="field">
+                <label for="panelModel">Modelo do Painel</label>
+                <input type="text" id="panelModel" class="input" required>
+            </div>
+            <div class="field">
+                <label for="hasBattery">Possui Bateria?</label>
+                <select id="hasBattery" class="input" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <div id="batteryDetails" style="display: none;">
+                <div class="field">
+                    <label for="batteryQuantity">Quantidade de Baterias</label>
+                    <input type="number" id="batteryQuantity" class="input">
+                </div>
+                <div class="field">
+                    <label for="batteryModel">Modelo da Bateria</label>
+                    <input type="text" id="batteryModel" class="input">
+                </div>
+            </div>
+            <div class="field">
+                <label for="inverterPrice">Preço do Inversor (R$)</label>
+                <input type="number" id="inverterPrice" class="input" required>
+            </div>
+            <div class="field">
+                <label for="panelPrice">Preço do Painel (R$)</label>
+                <input type="number" id="panelPrice" class="input" required>
+            </div>
+            <div class="field">
+                <label for="batteryPrice">Preço da Bateria (R$)</label>
+                <input type="number" id="batteryPrice" class="input">
+            </div>
+            <div class="field">
+                <label for="additionalPrice">Preço de Itens Adicionais (R$)</label>
+                <input type="number" id="additionalPrice" class="input" required>
+            </div>
+            <div class="field">
+                <label for="installationPrice">Preço da Instalação (R$)</label>
+                <input type="number" id="installationPrice" class="input" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
     </div>
+    <script>
+        document.getElementById('clientCity').addEventListener('change', function() {
+            const otherCityField = document.getElementById('otherCityField');
+            if (this.value === 'Outra') {
+                otherCityField.style.display = 'block';
+            } else {
+                otherCityField.style.display = 'none';
+            }
+        });
 
-    <div class="form-group">
-      <label for="customer-name">Nome do Cliente:</label>
-      <input type="text" id="customer-name" name="customer-name" class="input" required>
-    </div>
-
-    <div class="form-group">
-      <label for="city">Cidade:</label>
-      <select id="city" name="city" class="select" required>
-        <option value="">Selecione...</option>
-        <option value="abaiera">Abaíra</option>
-        <option value="abare">Abaré</option>
-        <option value="acajutiba">Acajutiba</option>
-        <!-- Add all the cities here -->
-        <option value="petrolina">Petrolina</option>
-        <option value="araripina">Araripina</option>
-        <option value="ipojuca">Ipojuca</option>
-        <option value="outra">Outra (escrever)</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="inversor-count">Inversor(es) com Problema:</label>
-      <input type="number" id="inversor-count" name="inversor-count" class="input" value="1" min="1" required>
-    </div>
-
-    <div id="inversors"></div>
-
-    <button type="submit" class="btn">Enviar Proposta</button>
-  </form>
-</div>
-
-<script>
-  const inversorsContainer = document.getElementById('inversors');
-  const inversorCountInput = document.getElementById('inversor-count');
-  let inversorCount = parseInt(inversorCountInput.value);
-
-  const createInversorFields = (index) => {
-    const inversorDiv = document.createElement('div');
-    inversorDiv.className = 'form-group';
-
-    const acLabel = document.createElement('label');
-    acLabel.htmlFor = `inversor-ac-${index}`;
-    acLabel.textContent = `Potência do(s) Inversor(es) (AC) ${index}:`;
-
-    const acInput = document.createElement('input');
-    acInput.type = 'number';
-    acInput.id = `inversor-ac-${index}`;
-    acInput.name = `inversor-ac-${index}`;
-    acInput.className = 'input';
-    acInput.required = true;
-
-    const kwLabel = document.createElement('label');
-    kwLabel.htmlFor = `inversor-kw-${index}`;
-    kwLabel.textContent = `Potência do Sistema (kWp) ${index}:`;
-
-    const kwInput = document.createElement('input');
-    kwInput.type = 'number';
-    kwInput.id = `inversor-kw-${index}`;
-    kwInput.name = `inversor-kw-${index}`;
-    kwInput.className = 'input';
-    kwInput.required = true;
-
-    const brandLabel = document.createElement('label');
-    brandLabel.htmlFor = `inversor-brand-${index}`;
-    brandLabel.textContent = `Marca do(s) Inversor(es) ${index}:`;
-
-    const brandInput = document.createElement('input');
-    brandInput.type = 'text';
-    brandInput.id = `inversor-brand-${index}`;
-    brandInput.name = `inversor-brand-${index}`;
-    brandInput.className = 'input';
-    brandInput.required = true;
-
-    const stockLabel = document.createElement('label');
-    stockLabel.htmlFor = `inversor-stock-${index}`;
-    stockLabel.textContent = `Tem em Estoque ${index}:`;
-
-    const stockSelect = document.createElement('select');
-    stockSelect.id = `inversor-stock-${index}`;
-    stockSelect.name = `inversor-stock-${index}`;
-    stockSelect.className = 'select';
-    stockSelect.required = true;
-
-    const stockOptionYes = document.createElement('option');
-    stockOptionYes.value = 'sim';
-    stockOptionYes.textContent = 'Sim';
-
-    const stockOptionNo = document.createElement('option');
-    stockOptionNo.value = 'nao';
-    stockOptionNo.textContent = 'Não';
-
-    stockSelect.appendChild(stockOptionYes);
-    stockSelect.appendChild(stockOptionNo);
-
-    inversorDiv.appendChild(acLabel);
-    inversorDiv.appendChild(acInput);
-    inversorDiv.appendChild(kwLabel);
-    inversorDiv.appendChild(kwInput);
-    inversorDiv.appendChild(brandLabel);
-    inversorDiv.appendChild(brandInput);
-    inversorDiv.appendChild(stockLabel);
-    inversorDiv.appendChild(stockSelect);
-
-    stockSelect.addEventListener('change', () => {
-      if (stockSelect.value === 'nao') {
-        const replacementBrandLabel = document.createElement('label');
-        replacementBrandLabel.htmlFor = `inversor-replacement-brand-${index}`;
-        replacementBrandLabel.textContent = `Marca do Inversor a ser Substituído:`;
-
-        const replacementBrandInput = document.createElement('input');
-        replacementBrandInput.type = 'text';
-        replacementBrandInput.id = `inversor-replacement-brand-${index}`;
-        replacementBrandInput.name = `inversor-replacement-brand-${index}`;
-        replacementBrandInput.className = 'input';
-        replacementBrandInput.required = true;
-
-        const replacementPotenciaLabel = document.createElement('label');
-        replacementPotenciaLabel.htmlFor = `inversor-replacement-potencia-${index}`;
-        replacementPotenciaLabel.textContent = `Potência do Inversor a ser Substituído:`;
-
-        const replacementPotenciaInput = document.createElement('input');
-        replacementPotenciaInput.type = 'number';
-        replacementPotenciaInput.id = `inversor-replacement-potencia-${index}`;
-        replacementPotenciaInput.name = `inversor-replacement-potencia-${index}`;
-        replacementPotenciaInput.className = 'input';
-        replacementPotenciaInput.required = true;
-
-        const replacementValorLabel = document.createElement('label');
-        replacementValorLabel.htmlFor = `inversor-replacement-valor-${index}`;
-        replacementValorLabel.textContent = `Valor do Inversor a ser Substituído:`;
-
-        const replacementValorInput = document.createElement('input');
-        replacementValorInput.type = 'number';
-        replacementValorInput.id = `inversor-replacement-valor-${index}`;
-        replacementValorInput.name = `inversor-replacement-valor-${index}`;
-        replacementValorInput.className = 'input';
-        replacementValorInput.required = true;
-
-        inversorDiv.appendChild(replacementBrandLabel);
-        inversorDiv.appendChild(replacementBrandInput);
-        inversorDiv.appendChild(replacementPotenciaLabel);
-        inversorDiv.appendChild(replacementPotenciaInput);
-        inversorDiv.appendChild(replacementValorLabel);
-        inversorDiv.appendChild(replacementValorInput);
-      } else {
-        const replacementFields = inversorDiv.querySelectorAll('label, input');
-        replacementFields.forEach(field => field.remove());
-      }
-    });
-
-    return inversorDiv;
-  };
-
-  const updateInversors = () => {
-    inversorsContainer.innerHTML = '';
-    inversorCount = parseInt(inversorCountInput.value);
-    for (let i = 1; i <= inversorCount; i++) {
-      const inversorFields = createInversorFields(i);
-      inversorsContainer.appendChild(inversorFields);
-    }
-  };
-
-  inversorCountInput.addEventListener('input', updateInversors);
-  updateInversors();
-</script>
-
+        document.getElementById('hasBattery').addEventListener('change', function() {
+            const batteryDetails = document.getElementById('batteryDetails');
+            if (this.value === 'Sim') {
+                batteryDetails.style.display = 'block';
+            } else {
+                batteryDetails.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
-
