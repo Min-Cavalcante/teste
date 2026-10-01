@@ -6,21 +6,82 @@
     <title>Proposta de Garantia do Fabricante</title>
     <link rel="stylesheet" href="colors_and_type.css">
     <style>
-        body { margin: 0; padding: 56px; background: var(--bg-paper); }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .form-group { margin-bottom: 24px; }
-        .inversor-group { margin-top: 24px; }
-        .substituto-group { margin-top: 12px; display: none; }
-        .stat-card { margin-bottom: 24px; }
-        .notice { margin-bottom: 24px; }
+        body {
+            margin: 0;
+            padding: 56px;
+            background: var(--bg-paper);
+            font-family: var(--font-body);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 28px;
+            background: white;
+            border: 1px solid var(--border-hairline);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--fg-2);
+        }
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--ink-300);
+            background: white;
+            transition: all .15s;
+            font-family: var(--font-body);
+            font-size: 15px;
+        }
+        select:focus, input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: var(--gauss-green);
+            box-shadow: 0 0 0 3px rgba(57,181,74,0.18);
+        }
+        .inversor-group {
+            margin-top: 20px;
+        }
+        .substituto-group {
+            margin-top: 10px;
+            display: none;
+        }
+        button[type="submit"] {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 12px 20px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all .15s ease;
+            text-decoration: none;
+            letter-spacing: -0.005em;
+            background: var(--gauss-green);
+            color: var(--ink-1000);
+            box-shadow: var(--shadow-sm);
+        }
+        button[type="submit"]:hover {
+            background: var(--gauss-green-700);
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <div class="eyebrow" style="margin-bottom: 12px;">PROPOSTA DE GARANTIA · 01</div>
-            <h1>Proposta de Garantia do Fabricante</h1>
-        </header>
+        <h1 style="font-family: var(--font-display); font-weight: 800; font-size: 56px; letter-spacing: -0.03em; margin-bottom: 32px;">Proposta de Garantia do Fabricante</h1>
         <form id="garantiaForm">
             <div class="form-group">
                 <label for="cenario">Escolha o cenário:</label>
@@ -33,17 +94,17 @@
 
             <div class="form-group">
                 <label for="nomeCliente">Nome do Cliente:</label>
-                <input type="text" id="nomeCliente" name="nomeCliente" class="input" required>
+                <input type="text" id="nomeCliente" name="nomeCliente" required class="input">
             </div>
 
             <div class="form-group">
                 <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade" class="input" required>
+                <input type="text" id="cidade" name="cidade" required class="input">
             </div>
 
             <div class="form-group">
                 <label for="inversores">Inversor(es) com Problema:</label>
-                <input type="number" id="inversores" name="inversores" class="input" value="1" min="1" required>
+                <input type="number" id="inversores" name="inversores" value="1" min="1" required class="input">
             </div>
 
             <div id="inversores-container" class="inversor-group">
@@ -101,22 +162,22 @@
             for (let i = 1; i <= inversorCount; i++) {
                 inversorContainer.innerHTML += `
                     <div>
-                        <h3>Inversor ${i}</h3>
+                        <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; margin-bottom: 16px;">Inversor ${i}</h3>
                         <div class="form-group">
                             <label for="potenciaAc${i}">Potência do(s) Inversor(es) (AC):</label>
-                            <input type="number" id="potenciaAc${i}" name="potenciaAc${i}" class="input" required>
+                            <input type="number" id="potenciaAc${i}" name="potenciaAc${i}" required class="input">
                         </div>
                         <div class="form-group">
                             <label for="potenciaSistema${i}">Potência do Sistema (kWp):</label>
-                            <input type="number" id="potenciaSistema${i}" name="potenciaSistema${i}" class="input" required>
+                            <input type="number" id="potenciaSistema${i}" name="potenciaSistema${i}" required class="input">
                         </div>
                         <div class="form-group">
                             <label for="marcaInversor${i}">Marca do(s) Inversor(es):</label>
-                            <input type="text" id="marcaInversor${i}" name="marcaInversor${i}" class="input" required>
+                            <input type="text" id="marcaInversor${i}" name="marcaInversor${i}" required class="input">
                         </div>
                         <div class="form-group">
                             <label for="temEmEstoque${i}">Tem em Estoque:</label>
-                            <select id="temEmEstoque${i}" name="temEmEstoque${i}" class="input" required>
+                            <select id="temEmEstoque${i}" name="temEmEstoque${i}" required class="input">
                                 <option value="Sim">Sim</option>
                                 <option value="Não">Não</option>
                             </select>
